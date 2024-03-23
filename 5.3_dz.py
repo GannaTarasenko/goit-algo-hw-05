@@ -46,15 +46,5 @@ def display_logs(logs: list, level: str):
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python main.py /path/to/logfile.log [level]")
-        sys.exit(1)
-
-    log_file = sys.argv[1]  # Отримуємо шлях до файлу логів з аргументів командного рядка
-    logs = load_logs(log_file)  # Завантажуємо логи з файлу
-    log_counts = count_logs_by_level(logs)  # Підраховуємо кількість логів для кожного рівня
-    display_log_counts(log_counts)  # Виводимо загальну статистику
-
-    if len(sys.argv) == 3:
-        level_filter = sys.argv[2].upper()  # Отримуємо рівень фільтрації з аргументів командного рядка
-        filtered_logs = filter_logs_by_level(logs, level_filter)  # Фільтруємо логи за вказаним рівнем
-        display_logs(filtered_logs, level_filter)  # Виводимо деталі логів для певного рівня
+        print("Usage: python main.py/path/to/logfile.log [level]")
+        
